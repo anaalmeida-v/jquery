@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <input type="text" placeholder="input 1" />
+    <input type="text" placeholder="input 2" />
+    <input type="text" placeholder="input 3" />
+
+    <div class="lista1">
+      <div class="exemplo1">div 1</div>
+      <div class="exemplo2">div 2</div>
+      <div class="exemplo2">div 3</div>
+    </div>
+
+    <ul class="lista1">
+      <li class="exemplo1">opção 1</li>
+      <li class="exemplo2">opção 2</li>
+      <li class="exemplo2">opção 3</li>
+    </ul>
+
+    <ul class="lista2">
+      <li class="exemplo2">opção 1</li>
+      <li class="exemplo2">opção 2</li>
+      <li class="exemplo1">opção 3</li>
+    </ul>
+  </body>
+  <script>
+    //combinação de seletores
+    //selecionar elementos por classe de tag específica
+    console.log($("li.exemplo1")); //retorna a classe exemplo1 apenas se tiver dentro de uma li, caso exista mais de 1 li com a mesma classe, retorna também
+
+    //selecionar elementos por classe de classe específica
+    console.log($(".lista1 .exemplo2")); //retorna os elementos de qualquer tag com a class lista1 que possui elementos com a class exemplo2
+    console.log($(".lista1 div.exemplo2")); //retorna os elementos de qualquer tag com a class lista1 que possui elementos div com a class exemplo2
+
+    //atuação sobre o array de retorno dos elementos selecionados
+    console.log($(".lista1 .exemplo2"));
+
+    console.log($(".lista1 .exemplo2:first"));
+    console.log($(".lista1 .exemplo2:last"));
+    console.log($(".lista1 .exemplo2:even")); //índices são rearranjados
+    console.log($(".lista1 .exemplo2:odd")); //índices são rearranjados
+  </script>
+</html>
