@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        console.log("conteúdo div 1: ", $("#div").html());
+        console.log("conteúdo div 2: ", $("#div").html());
+      });
+    </script>
+  </head>
+  <body>
+    <div id="div1" style="border: solid 1px #000; height: 150px; width: 150px">
+      <a href="#">teste</a>
+      <p>Esse é outro teste</p>
+      texto
+    </div>
+    <div id="div1" style="border: solid 1px #000; height: 150px; width: 150px">
+      Div 2
+    </div>
+  </body>
+</html>

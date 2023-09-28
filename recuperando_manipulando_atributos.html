@@ -11,12 +11,19 @@
     ></script>
     <script>
       $(document).ready(() => {
-        $("div").attr("style", "background-color:blue", "width:100  ");
+        //código só é executado depois do carregamento da página toda no DOM
+        $("div").attr(
+          "style",
+          "background-color:blue",
+          "width: 200px; height: 200px"
+        ); //recuperando atributo style da tag div e atribuindo 2 valores a ela
+        $("input").attr("type", "password"); //mudando o tipo do atributo
       });
     </script>
   </head>
   <body>
-    <img src="./imagens/esfera_1.png" />
-    <div style="background-color: red; width: 100px; height: 100px"></div>
+    <img src="./imagens/esfera_1.png" /><!--atributo: 'src' -->
+    <div style="background-color:red; width:100px; height:100px"></div>
+    <input type="text" value="Eu sou um input" />
   </body>
 </html>
