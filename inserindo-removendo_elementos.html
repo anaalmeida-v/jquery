@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        $("#lista1").append("<li>Item 4</li>"); //inserindo como último item da 'lista1', dentro da tag que contém a classe a tag <li>
+        $("#lista1").prepend("<li>Item 0</ li>"); //inserindo como primero item da 'lista1', dentro da tag que contém a classe a tag <li>
+
+        $("#lista2").before("<li>Item novo</ li>"); //inserindo antes da tag que contém a classe 'lista2' a tag <li>
+        $("#lista2").after("<li>Inserido após a div</ li>"); //inserindo após da tag que contém a classe 'lista2' a tag <li>
+
+        $("#linha").after("<li>Inserido após a div</ li>");
+        $("#linha").before("<li>Inserido antes da div</ li>");
+        $("#lista2").remove(); //removendo item
+      });
+    </script>
+    <style>
+      * {
+        list-style-type: none;
+        margin-left: 5px;
+        padding: 0;
+        align-items: left;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="lista1">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <br /><br />
+    <div id="lista2">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </div>
+
+    <hr id="linha" />
+  </body>
+</html>
