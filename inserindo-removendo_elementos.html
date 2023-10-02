@@ -20,6 +20,7 @@
         $("#linha").after("<li>Inserido após a div</ li>");
         $("#linha").before("<li>Inserido antes da div</ li>");
         $("#lista2").remove(); //removendo item
+        $("#item2").remove(); //removendo item
       });
     </script>
     <style>
@@ -34,13 +35,13 @@
   <body>
     <ul id="lista1">
       <li>Item 1</li>
-      <li>Item 2</li>
+      <li class="item2">Item 2</li>
       <li>Item 3</li>
     </ul>
     <br /><br />
     <div id="lista2">
       <div>Item 1</div>
-      <div>Item 2</div>
+      <div class="item2">Item 2</div>
       <div>Item 3</div>
     </div>
 
