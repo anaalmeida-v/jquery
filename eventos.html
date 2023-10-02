@@ -11,7 +11,23 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      $(document).ready(() => {
+        $("#onload").html("Página carregada");
+
+        $(window).scroll(() => {
+          $("#scroll").html("Scroll acionado");
+        });
+        $(window).resize(() => {
+          $("#xyz").html("Página redimensional");
+        });
+
+        //function / arrow function
+        $("#div1").scroll((e) => {
+          $(e.target).css("background-color", "blue");
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -21,9 +37,20 @@
 
     <div>
       <h3>Browser</h3>
-      <span>Onload: </span><span>?</span><br />
-      <span>Scroll: </span><span>?</span><br />
-      <span>Window: </span><span>?</span>
+      <span>Onload: </span><span id="onload">?</span><br />
+      <span>Scroll: </span><span id="scroll">?</span><br />
+      <span>Resize window: </span><span id="xyz">?</span>
+      <div
+        id="div1"
+        style="
+          height: 100px;
+          width: 100px;
+          border: solid 1px;
+          overflow-y: scroll;
+        "
+      >
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </div>
       <hr />
 
       <h3>Mouse</h3>
