@@ -19,7 +19,9 @@
           $("#scroll").html("Scroll acionado");
         });
         $(window).resize(() => {
-          $("#xyz").html("Página redimensional");
+          $("#xyz")
+            .html("Página redimensionada")
+            .css("background-color", "red");
         });
 
         //function / arrow function
