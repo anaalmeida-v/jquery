@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <title>jQuery</title>
 
-    <style></style>
+    <style>
+      #divExterna {
+        background-color: #ccc;
+        width: 80px;
+        height: 80px;
+        padding: 70px;
+      }
+      #divInterna {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+      }
+    </style>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -39,6 +51,48 @@
         });
         $("#div2").mousemove((e) => {
           $("#resultadoDiv").html("X: " + e.offsetX + " / Y:" + e.offsetY);
+        });
+
+        /* mouseover / mouseout (antigos) */
+        /*        $("#divExterna").mouseover(() => {
+          $("#resultadoDiv1").html("entrou"); //adicionando no elemento texto "entrou", quando ocorre na divExterna o mouseover
+          console.log("Div Externa (entrou)");
+        });
+
+        $("#divExterna").mouseout(() => {
+          $("#resultadoDiv1").html("saiu"); //assim que tiramos cursor do mouse sobre elemento HTML, aparece a mensagem "saiu"
+          console.log("Div Externa (saiu)");
+        });
+
+        $("#divInterna").mouseover(() => {
+          $("#resultadoDiv2").html("entrou");
+          console.log("Div Interna (entrou)");
+        });
+
+        $("#divInterna").mouseout(() => {
+          $("#resultadoDiv2").html("saiu");
+          console.log("Div Interna (saiu)");
+        });
+*/
+        /* mouseenter / mouseleave (novos) */
+        $("#divExterna").mouseenter(() => {
+          $("#resultadoDiv1").html("entrou");
+          console.log("Div Externa (entrou)");
+        });
+
+        $("#divExterna").mouseleave(() => {
+          $("#resultadoDiv1").html("saiu");
+          console.log("Div Externa (saiu)");
+        });
+
+        $("#divInterna").mouseenter(() => {
+          $("#resultadoDiv2").html("entrou");
+          console.log("Div Interna (entrou)");
+        });
+
+        $("#divInterna").mouseleave(() => {
+          $("#resultadoDiv2").html("saiu");
+          console.log("Div Interna (saiu)");
         });
       });
     </script>
@@ -82,7 +136,16 @@
       ></div>
       <span>Resultado do evento sobre a div</span
       ><span id="resultadoDiv"></span>
-      <span id="resultadoDiv"></span>
+      <br />
+
+      <div id="divExterna">
+        <div id="divInterna"></div>
+      </div>
+      <span>Div Externa</span>
+      <span id="resultadoDiv1"></span>
+      <br />
+      <span>Div Interna</span>
+      <span id="resultadoDiv2"></span>
       <hr />
 
       <h3>Teclado</h3>
