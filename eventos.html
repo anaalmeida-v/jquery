@@ -55,25 +55,25 @@
 
         /* mouseover / mouseout (antigos) */
         /*        $("#divExterna").mouseover(() => {
-          $("#resultadoDiv1").html("entrou"); //adicionando no elemento texto "entrou", quando ocorre na divExterna o mouseover
-          console.log("Div Externa (entrou)");
-        });
+                $("#resultadoDiv1").html("entrou"); //adicionando no elemento texto "entrou", quando ocorre na divExterna o mouseover
+                console.log("Div Externa (entrou)");
+              });
 
-        $("#divExterna").mouseout(() => {
-          $("#resultadoDiv1").html("saiu"); //assim que tiramos cursor do mouse sobre elemento HTML, aparece a mensagem "saiu"
-          console.log("Div Externa (saiu)");
-        });
+              $("#divExterna").mouseout(() => {
+                $("#resultadoDiv1").html("saiu"); //assim que tiramos cursor do mouse sobre elemento HTML, aparece a mensagem "saiu"
+                console.log("Div Externa (saiu)");
+              });
 
-        $("#divInterna").mouseover(() => {
-          $("#resultadoDiv2").html("entrou");
-          console.log("Div Interna (entrou)");
-        });
+              $("#divInterna").mouseover(() => {
+                $("#resultadoDiv2").html("entrou");
+                console.log("Div Interna (entrou)");
+              });
 
-        $("#divInterna").mouseout(() => {
-          $("#resultadoDiv2").html("saiu");
-          console.log("Div Interna (saiu)");
-        });
-*/
+              $("#divInterna").mouseout(() => {
+                $("#resultadoDiv2").html("saiu");
+                console.log("Div Interna (saiu)");
+              });
+      */
         /* mouseenter / mouseleave (novos) */
         $("#divExterna").mouseenter(() => {
           $("#resultadoDiv1").html("entrou");
@@ -93,6 +93,25 @@
         $("#divInterna").mouseleave(() => {
           $("#resultadoDiv2").html("saiu");
           console.log("Div Interna (saiu)");
+        });
+
+        //teclado
+        $("#teclado").keyup((e) => {
+          //utilizando keyup para a string só ser exibida, se ela estiver de acordo com as condições
+          if (e.keyCode < 97 || e.keyCode > 100) {
+            let txt = $(e.target).val();
+            txt = txt.slice(0, -1); //removendo último item da string
+            $(e.target).val(txt);
+          } //caso o valor esteja de acordo com as condições, remove item da string
+        });
+        $("#teclado").keyup((e) => {
+          $("#resultadoTecla").html("Tecla liberada"); //tecla liberada, texto html é exibido
+
+          if (e.keyCode == 13) {
+            let txt = $(e.target).val();
+            $("#resultadoTecla").html(txt);
+            $(e.target).val(""); //removendo value do input assim que enter é clicado
+          }
         });
       });
     </script>
@@ -150,8 +169,8 @@
 
       <h3>Teclado</h3>
       <span>Nome:</span>
-      <input type="text" />
-      <span>Resultado do evento sobre o input</span>
+      <input type="text" id="teclado" />
+      <span id="resultadoTecla">Resultado do evento sobre o input</span>
       <hr />
 
       <h3>Formulário</h3>
