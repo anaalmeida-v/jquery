@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <style>
+      #div1 {
+        width: 80px;
+        height: 80px;
+        border: solid 1px #000;
+      }
+
+      .emDestaque {
+        background-color: red;
+      }
+    </style>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        $("#btn2").on("click", () => {
+          alert("BTN 2 clicado");
+        });
+
+        $("#btn1").on("click", () => {
+          $("#btn2").trigger("click"); //acionando evento de click no 'btn2' a partir do 'btn1'
+        });
+
+        $("#div1").hover(
+          //(e) => $(e.target).addClass("emDestaque"),
+          //(e) => $(e.target).removeClass("emDestaque")
+          (e) => $(e.target).toggleClass("emDestaque")
+        );
+
+        /*
+        $("#div1").toggleClass("emDestaque")//adiciona classe, pois não existe no elemento
+        $("#div1").toggleClass("emDestaque")//como classe foi adicionada, remove ela
+        */
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn1" type="button">BTN 1</button>
+    <button id="btn2" type="button">BTN 2</button>
+
+    <hr />
+
+    <div id="div1"></div>
+  </body>
+</html>
