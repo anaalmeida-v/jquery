@@ -16,6 +16,9 @@
         height: 80px;
         background-color: blue;
       }
+      .inputFocado {
+        background-color: #ff0000;
+      }
     </style>
 
     <script
@@ -77,22 +80,22 @@
         /* mouseenter / mouseleave (novos) */
         $("#divExterna").mouseenter(() => {
           $("#resultadoDiv1").html("entrou");
-          console.log("Div Externa (entrou)");
+          //console.log("Div Externa (entrou)");
         });
 
         $("#divExterna").mouseleave(() => {
           $("#resultadoDiv1").html("saiu");
-          console.log("Div Externa (saiu)");
+          //console.log("Div Externa (saiu)");
         });
 
         $("#divInterna").mouseenter(() => {
           $("#resultadoDiv2").html("entrou");
-          console.log("Div Interna (entrou)");
+          //console.log("Div Interna (entrou)");
         });
 
         $("#divInterna").mouseleave(() => {
           $("#resultadoDiv2").html("saiu");
-          console.log("Div Interna (saiu)");
+          //console.log("Div Interna (saiu)");
         });
 
         //teclado
@@ -112,6 +115,32 @@
             $("#resultadoTecla").html(txt);
             $(e.target).val(""); //removendo value do input assim que enter é clicado
           }
+        });
+        $("#nome").focus((e) => {
+          console.log("Esse elemento HTML recebeu foco (nome)");
+          $(e.target).addClass("inputFocado");
+        });//quando input ganhar o foco, exibe texto no console e adiciona classe ao input
+        $("#email").focus((e) => {
+          console.log("Esse elemento HTML recebeu foco (email)");
+          $(e.target).addClass("inputFocado");
+        });
+        $("#nome").blur((e) => {
+          console.log("Esse elemento HTML perdeu o foco (nome)");
+          $(e.target).removeClass("inputFocado");
+        }); //quando input perder o foco, exibe texto no console e adiciona classe ao input
+        $("#email").blur((e) => {
+          console.log("Esse elemento HTML perdeu o foco (email)");
+          $(e.target).removeClass("inputFocado");
+        }); 
+        $("#opcao").change((e) => {
+          console.log($(e.target).val());
+        });
+        $("#form").submit(() => {
+          e.preventDefault();
+          console.log("Formulário enviado");
+        });
+        $("a").click((e) => {
+          e.preventDefault(); //padrão do envio de formulário está sendo impedido de aconteceu(preventDefault - previne)
         });
       });
     </script>
@@ -174,15 +203,15 @@
       <hr />
 
       <h3>Formulário</h3>
-      <form>
+      <form id="form">
         <span>Nome:</span>
-        <input type="text" />
+        <input type="text" id="nome" />
 
         <span>E-mail:</span>
-        <input type="text" />
+        <input type="text" id="email" />
 
         <span>Motivo do contato:</span>
-        <select>
+        <select id="opcao">
           <option value="">-- Selecione --</option>
           <option value="duvida">Dúvida</option>
           <option value="sugestao">Sugestão</option>
@@ -190,6 +219,8 @@
 
         <button type="button">Enviar</button>
       </form>
+      <br />
+      <a href="http://www.google.com.br">Google</a>
     </div>
   </body>
 </html>
