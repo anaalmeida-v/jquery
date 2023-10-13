@@ -116,22 +116,16 @@
             $(e.target).val(""); //removendo value do input assim que enter é clicado
           }
         });
-        $("#nome").focus((e) => {
-          console.log("Esse elemento HTML recebeu foco (nome)");
+        $("#nome, #email").focus((e) => {
+          console.log("Esse elemento HTML recebeu foco");
           $(e.target).addClass("inputFocado");
-        });//quando input ganhar o foco, exibe texto no console e adiciona classe ao input
-        $("#email").focus((e) => {
-          console.log("Esse elemento HTML recebeu foco (email)");
-          $(e.target).addClass("inputFocado");
-        });
-        $("#nome").blur((e) => {
-          console.log("Esse elemento HTML perdeu o foco (nome)");
+        }); //quando input ganhar o foco, exibe texto no console e adiciona classe ao input
+
+        $("#nome, #email").blur((e) => {
+          console.log("Esse elemento HTML perdeu o foco");
           $(e.target).removeClass("inputFocado");
         }); //quando input perder o foco, exibe texto no console e adiciona classe ao input
-        $("#email").blur((e) => {
-          console.log("Esse elemento HTML perdeu o foco (email)");
-          $(e.target).removeClass("inputFocado");
-        }); 
+
         $("#opcao").change((e) => {
           console.log($(e.target).val());
         });
